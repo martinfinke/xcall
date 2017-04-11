@@ -1,6 +1,10 @@
 # xcall
 Call X-Callback-URLs From the Command Line. Outputs the `x-success` and `x-error` responses to `stdout`/`stderr`.
 
+## Download
+
+[Click here to download xcall v1.0](https://github.com/martinfinke/xcall/releases/download/v1.0/xcall.app.zip).
+
 ## Usage
 ```bash
 xcall.app/Contents/MacOS/xcall -url "someapp://x-callback-url/some-action"
