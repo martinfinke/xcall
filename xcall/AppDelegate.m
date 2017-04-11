@@ -107,8 +107,8 @@
 
 + (NSArray<NSURLQueryItem *> *)sourceCallbacks
 {
-	return @[[NSURLQueryItem queryItemWithName:@"x-success" value:@"xcall066958CAD8EA4CCA914382A48010191F://x-callback-url/handle-success"],
-			 [NSURLQueryItem queryItemWithName:@"x-error" value:@"xcall066958CAD8EA4CCA914382A48010191F://x-callback-url/handle-error"]];
+	return @[[NSURLQueryItem queryItemWithName:@"x-success" value:@"xcall066958CA://x-callback-url/handle-success"],
+			 [NSURLQueryItem queryItemWithName:@"x-error" value:@"xcall066958CA://x-callback-url/handle-error"]];
 }
 
 + (NSString *)jsonStringFromQueryItems:(NSArray<NSURLQueryItem *> *)queryItems
