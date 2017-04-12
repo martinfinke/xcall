@@ -10,6 +10,12 @@ Call X-Callback-URLs From the Command Line. Outputs the `x-success` and `x-error
 xcall.app/Contents/MacOS/xcall -url "someapp://x-callback-url/some-action"
 ```
 
+## Authorizing
+This application is unsigned. Before using it you must authorise it by right clicking and selecting open or by calling
+```bash
+xattr -dr com.apple.quarantine "xcall.app"
+```
+
 ## License
 Copyright (c) 2017 Martin Finke
 
