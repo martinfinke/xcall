@@ -5,14 +5,6 @@ Call X-Callback-URLs From the Command Line. Outputs the `x-success` and `x-error
 
 [Click here to download xcall v1.0](https://github.com/martinfinke/xcall/releases/download/v1.0/xcall.app.zip).
 
-The app is unsigned. Before using it, it needs to be authorised by right clicking and selecting *Open*, or by running:
-
-```bash
-xattr -dr com.apple.quarantine "xcall.app"
-```
-
-If you have an Apple developer account, please feel free to download the source to create and sign your own build.
-
 ## Usage
 
 ```bash
