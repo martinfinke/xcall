@@ -8,10 +8,13 @@ Call X-Callback-URLs From the Command Line. Outputs the `x-success` and `x-error
 ## Usage
 
 ```bash
-xcall.app/Contents/MacOS/xcall -url "someapp://x-callback-url/some-action"
+xcall.app/Contents/MacOS/xcall -url "someapp://x-callback-url/some-action?some-parameter=some-value" -activateApp YES
 ```
 
+The `url` parameter is required. The optional `activateApp` parameter controls whether the target app is brought to the foreground. If omitted, it is `NO`.
+
 ## License
+
 Copyright (c) 2017 Martin Finke
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

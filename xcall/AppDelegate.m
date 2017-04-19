@@ -35,7 +35,7 @@
 	}
 	
 	// Call URL
-	[self executeXCallbackURL: url];
+	[self executeXCallbackURL:url activateApp:[NSUserDefaults.standardUserDefaults boolForKey: @"activateApp"]];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification
@@ -89,7 +89,7 @@
 	[NSApp terminate: self];
 }
 
-- (void)executeXCallbackURL:(NSURL *)url
+- (void)executeXCallbackURL:(NSURL *)url activateApp:(BOOL)activateApp
 {
 	// Get URL components
 	NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
@@ -98,11 +98,8 @@
 	// Add source callback URL parameters
 	components.queryItems = [components.queryItems arrayByAddingObjectsFromArray: self.class.sourceCallbacks];
 	
-	// Always use silent mode
-	components.queryItems = [components.queryItems arrayByAddingObject: [NSURLQueryItem queryItemWithName:@"silent-mode" value:@"YES"]];
-	
-	// Open URL without activating target app
-	[NSWorkspace.sharedWorkspace openURL:components.URL options:NSWorkspaceLaunchWithoutActivation configuration:@{} error:NULL];
+	// Open URL
+	[NSWorkspace.sharedWorkspace openURL:components.URL options:(activateApp ? NSWorkspaceLaunchDefault : NSWorkspaceLaunchWithoutActivation) configuration:@{} error:NULL];
 }
 
 + (NSArray<NSURLQueryItem *> *)sourceCallbacks
