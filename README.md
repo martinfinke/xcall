@@ -1,9 +1,10 @@
 # xcall
 Call X-Callback-URLs From the Command Line. Outputs the `x-success` and `x-error` responses to `stdout`/`stderr`.
 
-## Download
+## Install
 
-[Click here to download the latest version](https://github.com/martinfinke/xcall/releases/download/v1.0.1/xcall.app.zip).
+* [Click here to download the latest version](https://github.com/martinfinke/xcall/releases/download/v1.0.1/xcall.app.zip)
+* move xcall.app into your `/Applications/` folder
 
 ## Usage
 
