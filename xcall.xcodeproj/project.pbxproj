@@ -109,7 +109,7 @@
 			};
 			buildConfigurationList = 5BB15AC81E925DA30006DA29 /* Build configuration list for PBXProject "xcall" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -258,7 +258,7 @@
 				DEVELOPMENT_TEAM = X5AZV975AG;
 				INFOPLIST_FILE = xcall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.martin-finke.xcall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -272,7 +272,7 @@
 				DEVELOPMENT_TEAM = X5AZV975AG;
 				INFOPLIST_FILE = xcall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.martin-finke.xcall";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
