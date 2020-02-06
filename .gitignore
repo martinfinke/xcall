@@ -4,3 +4,5 @@ xcuserdata
 *.xcscmblueprint
 *.xcuserstate
 *.xcworkspacedata
+*.xcworkspace
+xcshareddata
