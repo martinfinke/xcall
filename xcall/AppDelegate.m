@@ -57,8 +57,7 @@
 	// Get action name
 	NSURLComponents *components = [NSURLComponents componentsWithURL:url resolvingAgainstBaseURL:YES];
 	NSString *actionName = components.path.lastPathComponent;
-	
-	
+		
 	// Convert URL response parameters to JSON, set exit code
 	NSString *target;
 	NSString *output;
@@ -113,9 +112,22 @@
 	NSMutableDictionary *items = [NSMutableDictionary new];
 
 	// Convert each query item to a key/value pair
-	for (NSURLQueryItem *queryItem in queryItems)
-		items[queryItem.name] = queryItem.value ?: NSNull.null;
-	
+    for (NSURLQueryItem *queryItem in queryItems) {
+        // queryItem.value may be a JSON object, so attempt to deserialize from JSON first
+        NSData *data = [queryItem.value dataUsingEncoding:NSUTF8StringEncoding];
+        if (data == nil) {
+            continue;
+        }
+        
+        NSError *error = nil;
+        id object = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        if (error) {
+            items[queryItem.name] = queryItem.value ?: NSNull.null;
+        } else {
+            [items setObject:object forKey:queryItem.name];
+        }
+    }
+    
 	// Convert to JSON string
 	NSData *data = [NSJSONSerialization dataWithJSONObject:items options:NSJSONWritingPrettyPrinted error:NULL];
 	return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
